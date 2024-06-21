@@ -1,0 +1,42 @@
+---
+import Container from "@/shared/ui/Container.astro";
+import TechCard from "../Competencies/ui/TechCard.astro";
+
+const contacts = [
+  {  src: '/icons/telegram.svg', alt: 'Telegram', href: 'https://t.me/+995592041085', bgClasses: 'from-teal-500 bg-teal-900' },
+  {  src: '/icons/gmail.svg', alt: 'Email', href: 'mailto:pavlov.programmer@gmail.com', bgClasses: 'from-teal-500 bg-teal-900' },
+  {  src: '/icons/linkedin.svg', alt: 'LinkedIn', href: 'https://www.linkedin.com/in/pavlov-programmer/', bgClasses: 'from-teal-500 bg-teal-900' },
+  {  src: '/icons/github.svg', alt: 'Github', href: 'https://github.com/dmrompav', bgClasses: 'from-white bg-gray-100' },
+  {  src: '/icons/devto.svg', alt: 'Dev.to', href: 'https://dev.to/dmrompav', bgClasses: 'from-white bg-gray-100' },
+]
+---
+
+<section class='contacts' id='contacts'>
+  <Container>
+    <h3 class='contacts__title' data-aos="fade-up" data-aos-delay="0"><i _i='mdi-message-badge' />Contacts</h3>
+    <p>
+      <div class="flex flex-row -space-x-2 sm:space-x-2 md:space-x-4 lg:space-x-8 justify-center">
+        {
+          contacts.map((item, i) => (
+            <a href={item.href} target='_blank'>
+              <TechCard src={item.src} alt={item.alt} bgClasses={item.bgClasses} index={i} />
+            </a>
+          ))
+        }
+      </div>
+    </p>
+  </Container>
+</section>
+
+<style lang='scss'>
+.contacts {
+  @apply bg-gradient-to-b from-gray-900 to-black;
+
+  &__title {
+    @apply
+      bg-gradient-to-b from-white to-sky-400;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+}
+</style>

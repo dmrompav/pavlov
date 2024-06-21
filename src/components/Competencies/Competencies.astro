@@ -1,0 +1,125 @@
+---
+import Container from "@/shared/ui/Container.astro";
+import TechCard from "./ui/TechCard.astro";
+
+type TechCardProps = { src: string, alt: string };
+
+const front: TechCardProps[] = [
+  { src: '/icons/astro.svg', alt: 'Astro' },
+  { src: '/icons/vue.svg', alt: 'Vue' },
+  { src: '/icons/nuxt.svg', alt: 'Nuxt' },
+  { src: '/icons/react.svg', alt: 'React' },
+  { src: '/icons/next.svg', alt: 'Next' },
+  { src: '/icons/unocss.svg', alt: 'UnoCSS' },
+  { src: '/icons/tailwindcss.svg', alt: 'Tailwind' },
+  { src: '/icons/figma.svg', alt: 'Figma' },
+];
+
+const mobile: TechCardProps[] = [
+  { src: '/icons/react-native.svg', alt: 'React Native' },
+  { src: '/icons/capacitor.svg', alt: 'Capacitor' },
+];
+
+const back: TechCardProps[] = [
+  { src: '/icons/docker.svg', alt: 'Docker' },
+  { src: '/icons/go.svg', alt: 'Go' },
+  { src: '/icons/laravel.svg', alt: 'Laravel' },
+  { src: '/icons/nest.svg', alt: 'Nest' },
+  { src: '/icons/mongo.svg', alt: 'Mongo' },
+  { src: '/icons/graphql.svg', alt: 'GraphQL' },
+  { src: '/icons/postgres.svg', alt: 'Postgres' },
+  { src: '/icons/mariadb.svg', alt: 'MariaDB' },
+];
+
+const platforms: { src: string, alt: string }[] = [
+  { src: '/icons/linux.svg', alt: 'Linux' },
+  { src: '/icons/windows.svg', alt: 'Windows' },
+  { src: '/icons/android.svg', alt: 'Android' },
+  { src: '/icons/apple.svg', alt: 'Apple' },
+]
+---
+
+<div class="competencies">
+  <Container>
+    <section>
+      <h3 class='competencies__title' data-aos="fade-up" data-aos-delay="0"><i _i='mdi-brain' />Competencies</h3>
+      <p data-aos="fade-up" data-aos-delay="100">
+        With 5+ years of web development experience,
+        I have acquired a diverse set of skills that enable me to handle both
+        front-end and back-end development tasks efficiently.
+        My expertise covers a wide range of technologies and tools,
+        making me proficient in building, maintaining, and optimizing
+        web applications from start to finish.
+      </p>
+
+      <article class='competencies__cards competencies__cards_front'>
+        <div class="competencies__techs">
+          {
+            front.map((item, i) => (
+              <TechCard
+                {...item}
+                bgClasses='from-sky-500 bg-sky-900'
+                index={i}
+              />)
+            )
+          }
+          {
+            mobile.map((item, i) => (
+              <TechCard
+                {...item}
+                bgClasses='from-teal-500 bg-teal-900'
+                index={i}
+              />
+            ))
+          }
+        </div>
+      </article>
+
+      <article class='competencies__cards competencies__cards_back'>
+        <div class="competencies__techs">
+          {
+            back.map((item, i) => (
+              <TechCard
+                {...item}
+                bgClasses='from-gray-400 bg-gray-700'
+                index={i}
+              />
+            ))
+          }
+        </div>
+      </article>
+
+      <article class='competencies__cards competencies__cards_platforms'>
+        <div class="competencies__techs">
+          {
+            platforms.map((item, i) => (
+              <TechCard
+                {...item}
+                bgClasses='from-rose-400 bg-rose-700'
+                index={i}
+              />
+            ))
+          }
+        </div>
+      </article>
+    </section>
+  </Container>
+</div>
+
+<style lang='scss'>
+.competencies {
+  @apply bg-gradient-to-b from-gray-900 to-sky-900;
+
+  &__techs {
+    @apply
+      flex flex-wrap flex-row justify-center;
+  }
+
+  &__title {
+    @apply bg-gradient-to-b from-white to-sky-400;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+</style>

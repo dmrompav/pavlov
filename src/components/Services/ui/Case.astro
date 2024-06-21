@@ -1,0 +1,160 @@
+---
+type Props = {
+  type: number;
+}
+
+const { type } = Astro.props;
+
+const cases = [
+  {
+    title: 'Interface development',
+    subtitle: 'UI to your API',
+    classes: 'flex-1',
+  },
+  { 
+    title: 'Full-stack development',
+    subtitle: 'From idea to the full end',
+    classes: 'flex-[1.5] transform lg:scale-110',
+  },
+  {
+    title: 'Mobile development',
+    subtitle: 'Native/Capacitor',
+    classes: 'flex-1',
+  },
+];
+---
+
+<article class={`case ${cases[type].classes || ""}`} data-aos="fade-up" data-aos-delay={type * 150}>
+  <div class="relative">
+    <div class="case__container">
+      <div class={`case__bg case__bg_${type}`}></div>
+
+      <div class="relative">
+        <h4 class='font-black uppercase'>{cases[type].title}</h4>
+        <i class='text-base font-100 inline-block line-height-[20px]'>{cases[type].subtitle}</i>
+        {
+          type === 0 && (
+            <div class="case__inners">
+              <div class='case__inner'><i _i='mdi-page-layout-header-footer' />Modern and intuitive design</div>
+              <div class='case__inner'><i _i='mdi-responsive' />Responsive</div>
+              <div class='case__inner'><i _i='mdi-lightning-bolt' />Perfomance optimization</div>
+              <div class='case__inner'><i _i='mdi-robot-love' />SEO-friendly</div>
+            </div>
+          )
+        }
+        {
+          type === 1 && (
+            <div class="case__inners">
+              <div class='case__inner'><i _i='mdi-docker' />Docker containers for easier installation</div>
+              <div class='case__inner'><i _i='mdi-server' />Deployment on any server</div>
+              <div class='case__inner'><i _i='mdi-shield' />Safe and powered by new technologies</div>
+              <div class='case__inner'><i _i='mdi-pipe' />CI/CD configuration</div>
+              <div class='case__inner'><i _i='mdi-api' />Seamlessly connecting with third-party services</div>
+              <div class='case__inner'><i _i='mdi-arrow-expand-all' />Scalable - designed to grow with your business</div>
+            </div>
+          )
+        }
+        {
+          type === 2 && (
+            <div class="case__inners">
+              <div class='case__inner'><i _i='mdi-nativescript' />Native app or with a WebView</div>
+              <div class='case__inner'><i _i='mdi-google-play' />Publish to AppStore or GooglePlay</div>
+              <div class='case__inner'><i _i='mdi-notifications-active' />Push notifications</div>
+              <div class='case__inner'><i _i='mdi-shield-user' />User authentication</div>
+            </div>
+          )
+        }
+      </div>
+    </div>
+    <div class="case__price">
+      <i class={`case__price-icon-colored case__price-icon-colored--${type}`} _i='mdi-starburst'></i>
+      <i class='absolute w-full h-full' _i='mdi-starburst'></i>
+      <div class="relative text-gray-500 transform -rotate-20 flex flex-col justify-center -space-y-1 -mt-2">
+        <span class='text-xs pl-4'>from</span>
+        <div class="flex space-x-0 items-end">
+          <strong class={`case__price-number case__price-number--${type}`}>30$</strong>
+          <span class='text-xs'>/h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<style lang='scss'>
+.case {
+  @apply
+    relative min-w-[275px] rounded-xl m-4;
+
+  &__bg {
+    @apply absolute w-full h-full top-0 left-0 opacity-80;
+
+    &_0 {
+      @apply bg-gradient-to-b from-sky-600 to-sky-900;
+    }
+
+    &_1 {
+      @apply bg-gradient-to-b from-rose-400 to-rose-700;
+    }
+
+    &_2 {
+      @apply bg-gradient-to-b from-teal-600 to-teal-900;
+    }
+  }
+
+  &__container {
+    @apply relative rounded-xl overflow-hidden px-4 pt-6 pb-20 md:px-6 md:pt-10 lg:px-8 lg:pt-14 w-full shadow-xl;
+  }
+
+  &__inners {
+    @apply flex flex-col space-y-4 my-6;
+  }
+
+  &__inner {
+    @apply text-base line-height-[20px];
+
+    & i {
+      @apply mr-2 text-2xl;
+    }
+  }
+
+  &__price {
+    @apply absolute bg-white-500 w-32 h-32 -bottom-8 right-2 p-2 flex items-center justify-center rounded;
+
+    & strong {
+      @apply relative text-gray-900;
+    }
+  }
+
+  &__price-number {
+    @apply
+      text-4xl text-gray-900 -mb-1
+      bg-gradient-to-b;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+    &--0 {
+      @apply from-sky-500 to-sky-900;
+    }
+    &--1 {
+      @apply from-rose-500 to-rose-900;
+    }
+    &--2 {
+      @apply from-teal-500 to-teal-900;
+    }
+  }
+
+  &__price-icon-colored {
+    @apply absolute w-full h-full transform scale-105;
+
+    &--0 {
+      @apply text-sky-700;
+    }
+    &--1 {
+      @apply text-rose-700;
+    }
+    &--2 {
+      @apply text-teal-700;
+    }
+  }
+}
+</style>

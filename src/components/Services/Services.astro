@@ -1,0 +1,31 @@
+---
+import Container from "@/shared/ui/Container.astro";
+import Case from "./ui/Case.astro";
+---
+
+<section class="services" id='services'>
+  <Container>
+    <h3 class="services__title" data-aos="fade-up" data-aos-delay="0"><i _i='mdi-code' />Services</h3>
+    <div class="services__cases">
+      <Case type={0}></Case>
+      <Case type={1}></Case>
+      <Case type={2}></Case>
+    </div>
+  </Container>
+</section>
+
+<style lang='scss'>
+.services {
+  @apply bg-gradient-to-b from-sky-700 to-gray-900;
+
+  &__title {
+    @apply bg-gradient-to-b from-white to-sky-400;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__cases {
+    @apply flex justify-center flex-wrap;
+  }
+}
+</style>

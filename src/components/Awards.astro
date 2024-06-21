@@ -1,0 +1,45 @@
+---
+import Container from "@/shared/ui/Container.astro";
+---
+
+<section class='awards'>
+  <Container>
+    <article class="awards__award">
+      <h3 class='awards__title' data-aos="fade-up" data-aos-delay="0"><i _i='mdi-certificate' />Awards</h3>
+      <p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div data-aos="fade-up" data-aos-delay="100">
+            <a href="https://1c.42sol.ru/" target='_blank'>
+              <img src="/images/42sol-logo.svg" alt="42Solution logo" class='w-65vw max-w-64 inline-block'>
+            </a>
+          </div>
+          <div class="flex flex-col space-y-4">
+            <strong data-aos="fade-up" data-aos-delay="200">
+              <span class='text-6xl'>”</span>For the best frontend performance in the company,
+              demonstrating consistent results in tackling challenging tasks,
+              and showcasing loyalty despite geographical distance
+            </strong>
+            <i class='block text-end text-gray-100 font-100' data-aos="fade-up" data-aos-delay="300">- S. Rozhdestvenskii, CEO</i>
+          </div>
+        </div>
+      </p>
+    </article>
+  </Container>
+</section>
+
+<style lang='scss'>
+.awards {
+  @apply bg-gradient-to-b from-sky-900 to-sky-700;
+
+  &__award {
+    @apply my-8;
+  }
+
+  &__title {
+    @apply
+      bg-gradient-to-b from-white to-sky-400;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+}
+</style>

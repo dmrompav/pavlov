@@ -1,0 +1,83 @@
+---
+import Container from "@/shared/ui/Container.astro";
+---
+
+<header class='header'>
+  <Container>
+    <div class="header__container">
+      <div class="header__logo" data-aos="fade-up" data-aos-delay="0">
+        <a href="/">
+          <span>P</span>avlov
+        </a>
+      </div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href='#services' data-aos="fade-up" data-aos-delay="100">Services</a></li>
+          <li><a href='#contacts' data-aos="fade-up" data-aos-delay="200">Contacts</a></li>
+          <li><a href='https://dev.to/dmrompav' data-aos="fade-up" data-aos-delay="300"><i _i='mdi-book' />Articles</a></li>
+          <li><a href='https://github.com/dmrompav?tab=repositories' data-aos="fade-up" data-aos-delay="400"><i _i='mdi-github' />Repositories</a></li>
+        </ul>
+      </div>
+    </div>
+  </Container>
+</header>
+
+<style lang='scss'>
+.header {
+  @apply
+    bg-black py-4;
+
+  &__container {
+    @apply
+      flex flex-col sm:flex-row justify-between items-center;
+  }
+
+  &__logo {
+    @apply
+      text-gray-10 font-black uppercase text-2xl lg:text-4xl;
+    text-shadow: 0px 3px 15px rgba(251,113,133,.2), 0px 3px 24px rgba(243,244,246,.3);
+    
+    & span {
+      @apply text-rose-500;
+    }
+  }
+
+  &__nav ul {
+    @apply
+      flex flex-wrap justify-center space-x-4 lg:text-xl;
+
+    & li {
+      @apply relative rounded transition-colors text-gray-400 transition-colors;
+
+      & a {
+        @apply relative p-2 inline-block cursor-pointer;
+      }
+
+      &:hover {
+        @apply text-gray-100;
+      }
+
+      &:before {
+        content: '';
+        @apply absolute block bottom-1 right-0 w-0 h-[2px] bg-rose-500;
+        transition: width .3s ease;
+      }
+
+      &:hover:before {
+        @apply w-full left-0;
+      }
+
+      // &:before {
+      //   content: '';
+      //   @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-100 to-red-500 rounded-xl;
+      //   clip-path: circle(0%);
+      //   transition: clip-path .5s ease;
+      // }
+
+      // &:hover:before {
+      //   clip-path: circle(100%);
+      // }
+    }
+  }
+}
+</style>

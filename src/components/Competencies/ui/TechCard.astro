@@ -1,0 +1,71 @@
+---
+type Props = {
+  src?: string;
+  alt?: string;
+  bgClasses?: string;
+  index?: number;
+}
+
+const {
+  src = '',
+  alt = '',
+  bgClasses,
+  index = 0,
+} = Astro.props;
+---
+
+<div class={`tech-card`} data-aos="fade-up" data-aos-delay={index * 50}>
+  <div class={`tech-card__bg bg-gradient-to-b ${bgClasses}`} />
+
+  <img src={src} alt={alt}>
+
+  <div class='tech-card__alt-desc'>
+    <span>{alt}</span>
+  </div>
+</div>
+
+<style lang='scss'>
+.tech-card {
+  @apply
+    relative p-2 m-2 overflow-hidden rounded-2xl shadow-xl;
+
+  &__bg {
+    @apply absolute top-0 left-0 w-full h-full opacity-70;
+  }
+
+  & img {
+    @apply
+      relative
+      w-8 h-8
+      sm:w-12 sm:h-12
+      md:w-16 md:h-16
+      lg:w-20 lg:h-20;
+  }
+
+  &__alt-desc {
+    @apply
+      text-center
+      absolute top-0 left-0 w-full h-full
+      flex items-center justify-center
+      opacity-0 transition-opacity;
+
+    backdrop-filter: blur(6px);
+    
+    &:before {
+      content: '';
+      @apply
+        absolute top-0 left-0 w-full h-full bg-gray-100 opacity-5;
+    }
+
+    & span {
+      @apply
+        text-xs sm:text-xs md:text-xl;
+      text-shadow: 0 0 4px rgb(0,0,0), 0 0 10px rgb(0,0,0);
+    }
+  }
+
+  &:hover &__alt-desc { 
+    @apply opacity-100;
+  }
+}
+</style>

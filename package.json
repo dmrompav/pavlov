@@ -1,0 +1,25 @@
+{
+  "name": "pavlov",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "aos": "^2.3.4",
+    "astro": "^4.10.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.66",
+    "@types/aos": "^3.0.7",
+    "@unocss/reset": "^0.61.0",
+    "sass": "^1.77.5",
+    "unocss": "^0.61.0"
+  }
+}
