@@ -1,13 +1,14 @@
 ---
 import Container from "@/shared/ui/Container.astro";
 import TechCard from "../Competencies/ui/TechCard.astro";
+import { BASE } from "@/shared/constants/url";
 
 const contacts = [
-  {  src: '/icons/telegram.svg', alt: 'Telegram', href: 'https://t.me/+995592041085', bgClasses: 'from-teal-500 bg-teal-900' },
-  {  src: '/icons/gmail.svg', alt: 'Email', href: 'mailto:pavlov.programmer@gmail.com', bgClasses: 'from-teal-500 bg-teal-900' },
-  {  src: '/icons/linkedin.svg', alt: 'LinkedIn', href: 'https://www.linkedin.com/in/pavlov-programmer/', bgClasses: 'from-teal-500 bg-teal-900' },
-  {  src: '/icons/github.svg', alt: 'Github', href: 'https://github.com/dmrompav', bgClasses: 'from-white bg-gray-100' },
-  {  src: '/icons/devto.svg', alt: 'Dev.to', href: 'https://dev.to/dmrompav', bgClasses: 'from-white bg-gray-100' },
+  {  src: BASE + '/icons/telegram.svg', alt: 'Telegram', href: 'https://t.me/+995592041085', bgClasses: 'from-teal-500 bg-teal-900' },
+  {  src: BASE + '/icons/gmail.svg', alt: 'Email', href: 'mailto:pavlov.programmer@gmail.com', bgClasses: 'from-teal-500 bg-teal-900' },
+  {  src: BASE + '/icons/linkedin.svg', alt: 'LinkedIn', href: 'https://www.linkedin.com/in/pavlov-programmer/', bgClasses: 'from-teal-500 bg-teal-900' },
+  {  src: BASE + '/icons/github.svg', alt: 'Github', href: 'https://github.com/dmrompav', bgClasses: 'from-white bg-gray-100' },
+  {  src: BASE + '/icons/devto.svg', alt: 'Dev.to', href: 'https://dev.to/dmrompav', bgClasses: 'from-white bg-gray-100' },
 ]
 ---
 

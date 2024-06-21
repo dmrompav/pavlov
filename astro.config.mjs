@@ -6,6 +6,9 @@ import path from 'path';
 export default defineConfig({
   site: 'https://dmrompav.github.io',
   base: '/pavlov',
+  prefetch: {
+    prefetchAll: true
+  },
 
   integrations: [
     UnoCSS({

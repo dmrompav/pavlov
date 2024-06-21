@@ -1,41 +1,42 @@
 ---
 import Container from "@/shared/ui/Container.astro";
 import TechCard from "./ui/TechCard.astro";
+import { BASE } from '@/shared/constants/url';
 
 type TechCardProps = { src: string, alt: string };
 
 const front: TechCardProps[] = [
-  { src: '/icons/astro.svg', alt: 'Astro' },
-  { src: '/icons/vue.svg', alt: 'Vue' },
-  { src: '/icons/nuxt.svg', alt: 'Nuxt' },
-  { src: '/icons/react.svg', alt: 'React' },
-  { src: '/icons/next.svg', alt: 'Next' },
-  { src: '/icons/unocss.svg', alt: 'UnoCSS' },
-  { src: '/icons/tailwindcss.svg', alt: 'Tailwind' },
-  { src: '/icons/figma.svg', alt: 'Figma' },
+  { src: BASE + '/icons/astro.svg', alt: 'Astro' },
+  { src: BASE + '/icons/vue.svg', alt: 'Vue' },
+  { src: BASE + '/icons/nuxt.svg', alt: 'Nuxt' },
+  { src: BASE + '/icons/react.svg', alt: 'React' },
+  { src: BASE + '/icons/next.svg', alt: 'Next' },
+  { src: BASE + '/icons/unocss.svg', alt: 'UnoCSS' },
+  { src: BASE + '/icons/tailwindcss.svg', alt: 'Tailwind' },
+  { src: BASE + '/icons/figma.svg', alt: 'Figma' },
 ];
 
 const mobile: TechCardProps[] = [
-  { src: '/icons/react-native.svg', alt: 'React Native' },
-  { src: '/icons/capacitor.svg', alt: 'Capacitor' },
+  { src: BASE + '/icons/react-native.svg', alt: 'React Native' },
+  { src: BASE + '/icons/capacitor.svg', alt: 'Capacitor' },
 ];
 
 const back: TechCardProps[] = [
-  { src: '/icons/docker.svg', alt: 'Docker' },
-  { src: '/icons/go.svg', alt: 'Go' },
-  { src: '/icons/laravel.svg', alt: 'Laravel' },
-  { src: '/icons/nest.svg', alt: 'Nest' },
-  { src: '/icons/mongo.svg', alt: 'Mongo' },
-  { src: '/icons/graphql.svg', alt: 'GraphQL' },
-  { src: '/icons/postgres.svg', alt: 'Postgres' },
-  { src: '/icons/mariadb.svg', alt: 'MariaDB' },
+  { src: BASE + '/icons/docker.svg', alt: 'Docker' },
+  { src: BASE + '/icons/go.svg', alt: 'Go' },
+  { src: BASE + '/icons/laravel.svg', alt: 'Laravel' },
+  { src: BASE + '/icons/nest.svg', alt: 'Nest' },
+  { src: BASE + '/icons/mongo.svg', alt: 'Mongo' },
+  { src: BASE + '/icons/graphql.svg', alt: 'GraphQL' },
+  { src: BASE + '/icons/postgres.svg', alt: 'Postgres' },
+  { src: BASE + '/icons/mariadb.svg', alt: 'MariaDB' },
 ];
 
 const platforms: { src: string, alt: string }[] = [
-  { src: '/icons/linux.svg', alt: 'Linux' },
-  { src: '/icons/windows.svg', alt: 'Windows' },
-  { src: '/icons/android.svg', alt: 'Android' },
-  { src: '/icons/apple.svg', alt: 'Apple' },
+  { src: BASE + '/icons/linux.svg', alt: 'Linux' },
+  { src: BASE + '/icons/windows.svg', alt: 'Windows' },
+  { src: BASE + '/icons/android.svg', alt: 'Android' },
+  { src: BASE + '/icons/apple.svg', alt: 'Apple' },
 ]
 ---
 
